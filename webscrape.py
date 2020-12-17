@@ -89,23 +89,3 @@ class PropertySearch:
         else:
             print('No rental listings found that match search preferences. Please adjust preference selections.')
 
-
-# if irrelevant listings found, try search 'CITY, STATE, POSTCODE' e.g. 'Chatswood, NSW, 2067'.
-a = PropertySearch(city='Chatswood',
-                   num_rooms=0,
-                   min_price=300,
-                   max_price=400,
-                   min_car=1,
-                   surrounding_suburbs=False)
-
-# return URL search string for search page
-a.search_url(3)
-
-# return results of one search page in Pandas dataframe
-a.results_page(3)
-
-# return all results in Pandas dataframe
-a.results()
-
-# store listings in CSV with default naming convention 'rental-listings_YYYY-MM-DD.txt'
-a.results_save()
