@@ -81,12 +81,3 @@ class PropertySearch:
         df = pd.concat(df).reset_index(drop=True)
 
         return df
-
-    def results_save(self):
-        df = self.results()
-
-        if len(df) > 0:
-            df.to_csv(f'rental-listings_{datetime.datetime.now().date()}.csv', index=False)
-        else:
-            print('No rental listings found that match search preferences. Please adjust preference selections.')
-
