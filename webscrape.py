@@ -40,7 +40,8 @@ class PropertySearch:
 
         response = requests.get(self.search_url(page_num))
 
-        html_soup = BeautifulSoup(response.text)
+        # different parsers can be viewed here: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+        html_soup = BeautifulSoup(response.text, features='lxml')
 
         address_list = []
         price_list = []
